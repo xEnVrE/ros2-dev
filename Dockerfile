@@ -22,7 +22,8 @@ RUN apt install -y -qq apt-utils build-essential cmake cmake-curses-gui curl ema
 RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
 RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 RUN apt update
-RUN apt install -y -qq ros-foxy-desktop
+RUN apt install -y -qq libpython3-dev python3-pip python3-colcon-common-extensions python3-rosdep ros-foxy-desktop
+RUN rosdep init
 
 # Install Gazebo11
 RUN curl -sSL http://get.gazebosim.org | sh
@@ -37,6 +38,8 @@ USER user
 
 # Setup ROS2
 RUN echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+rosdep update
+pip3 install -U argcomplete
 
 # Setup Gazebo11
 RUN echo "source /usr/share/gazebo/setup.sh"
