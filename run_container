@@ -2,6 +2,6 @@ docker run -it \
        --user user \
        --env=DISPLAY \
        --net=host \
-       --gpus all --device /dev/nvidia0 --device /dev/nvidia-uvm --device /dev/nvidia-uvm-tools --device /dev/nvidiactl \
+       --gpus all --device /dev/nvidia0 --device /dev/nvidia-uvm --device /dev/nvidia-uvm-tools --device /dev/nvidiactl --device /dev/dri/card0 --device /dev/dri/renderD128 \
        --name focal-ros-cuda-gl-cnt \
        focal-ros-cuda-gl
