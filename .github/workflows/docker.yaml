@@ -10,7 +10,7 @@ jobs:
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@main
       with:
-        name: robotology/ros2-dev
+        name: xenvre/ros2-dev
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
         workdir: .
