@@ -38,8 +38,8 @@ USER user
 
 # Setup ROS2
 RUN echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
-rosdep update
-pip3 install -U argcomplete
+RUN rosdep update
+RUN pip3 install -U argcomplete
 
 # Setup Gazebo11
 RUN echo "source /usr/share/gazebo/setup.sh"
