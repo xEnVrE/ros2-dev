@@ -13,5 +13,5 @@ jobs:
         name: robotology/ros2-dev
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-        workdir: dockerfiles
+        workdir: .
         registry: ghcr.io
