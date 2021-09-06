@@ -60,7 +60,7 @@ WORKDIR /home/user/ws/src/launch_pal
 RUN git checkout 0.0.5
 
 WORKDIR /home/user/ws
-RUN colcon build
+RUN source /opt/ros/foxy/setup.bash; colcon build
 
 # Make sure the setup.bash is sourced
 RUN echo "source /home/user/ws/install/setup.bash" >> ~/.bashrc
