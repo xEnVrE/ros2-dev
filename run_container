@@ -1,7 +1,8 @@
+xhost +
 docker run -it \
        --user user \
        --env=DISPLAY \
        --net=host \
-       --gpus all --device /dev/nvidia0 --device /dev/nvidia-uvm --device /dev/nvidia-uvm-tools --device /dev/nvidiactl --device /dev/dri/card0 --device /dev/dri/renderD128 \
+       --gpus all --device /dev/nvidia0 --device /dev/nvidiactl --device /dev/dri/card0 \
        --name focal-ros-cuda-gl-cnt \
        ghcr.io/xenvre/ros2-dev
