@@ -1,1 +1,2 @@
+xhost +
 docker exec -it focal-ros-cuda-gl-cnt bash
