@@ -66,7 +66,7 @@ WORKDIR /home/user/ws
 RUN source /opt/ros/foxy/setup.bash && colcon build
 
 # Make sure the setup.bash is sourced
-RUN echo "source /home/user/ws/src/install/setup.bash" >> ~/.bashrc
+RUN echo "source /home/user/ws/install/setup.bash" >> ~/.bashrc
 
 # Launch bash from /home/user
 WORKDIR /home/user
