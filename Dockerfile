@@ -3,6 +3,9 @@ LABEL org.opencontainers.image.title="ROS Image"
 LABEL org.opencontainers.image.description="Infrastructure for running ROS with GPU support"
 LABEL org.opencontainers.image.authors="Nicola A. Piga <nicola.piga@iit.it>"
 
+# Use /bin/bash instead of /bin/sh
+SHELL ["/bin/bash", "-c"]
+
 # Non-interactive installation mode
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -60,7 +63,7 @@ WORKDIR /home/user/ws/src/launch_pal
 RUN git checkout 0.0.5
 
 WORKDIR /home/user/ws
-RUN . /opt/ros/foxy/setup.bash && colcon build
+RUN source /opt/ros/foxy/setup.bash && colcon build
 
 # Make sure the setup.bash is sourced
 RUN echo "source /home/user/ws/install/setup.bash" >> ~/.bashrc
