@@ -53,7 +53,7 @@ WORKDIR /home/user/ws/src
 RUN git clone https://github.com/pal-robotics/tiago_tutorials -b foxy-devel
 RUN sed -i "s#git@github.com:#https://github.com/#" tiago_tutorials/tiago_public.rosinstall
 # rosinstall fails but it will download all the required repositories
-RUN rosinstall /home/user/ws/src /opt/ros/foxy/ tiago_tutorials/tiago_public.rosinstall; rm -r ./build ./log ./install
+RUN rosinstall /home/user/ws/src /opt/ros/foxy/ tiago_tutorials/tiago_public.rosinstall; exit 0
 
 # It seems that we require tag 0.0.5
 WORKDIR /home/user/ws/src/launch_pal
